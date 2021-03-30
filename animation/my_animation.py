@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 fname=''
 # Dark Background Option
-if(False): plt.style.use('dark_background'); fname='black_'
+if(True): plt.style.use('dark_background'); fname='black_'
 import matplotlib.animation as animation
 
 big_rad = 0.5 ; small_rad = big_rad/2
@@ -85,8 +85,9 @@ ax.add_patch(small_circle)
 plt.axis('off')
 
 anim = animation.FuncAnimation(fig, animate, init_func=init, frames=int(round(2*np.pi/omega)), interval=10, blit=True)
+
 ## SAVE Routine
-fname = fname + 'circ'
+fname = fname + 'roll'
 anim.save(fname+'.mp4', writer = 'ffmpeg', fps = 20, extra_args=['-vcodec', 'libx264'])
-anim.save(fname+'.gif', fps = 20, writer = 'ffmpeg')
+anim.save(fname+'.gif', writer = 'ffmpeg', fps = 20)
 plt.show()
