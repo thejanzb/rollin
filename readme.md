@@ -8,7 +8,7 @@ Consider a circle (radius R) rolling without slipping on the inner surface of a 
 <i> Visualization : </i>
 --
 
-![GIF](./animation/black_rollin.gif)
+![GIF](./animation/black_roll.gif)
 
 <i> Solution : </i>
 --
