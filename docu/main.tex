@@ -1,0 +1,119 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{nicefrac}
+\usepackage{color}
+%% For fixing Unicode characters in pdf_tex file from Inkscape
+% \DeclareUnicodeCharacter{00A0}{ }
+% \usepackage[Smaller]{cancel}
+% Unused packages
+    % \usepackage{comment}
+    % \usepackage{longtable}
+    % \usepackage{booktabs}
+    % \usepackage{gensymb}
+    % \usepackage{subcaption}
+    % \usepackage[hyphens]{url}
+    % \usepackage{hyperref}
+    % \hypersetup{breaklinks=true}
+    % \usepackage{trimclip}
+    % \usepackage{units}
+    % \usepackage{listings}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+% \newtheorem{proof}{Proof}
+
+\geometry{a4paper,total={170mm,257mm},left=20mm,top=20mm}
+
+\title{\vspace{-2cm} Proof : Rolling Around\vspace{-1.5ex}}
+\author{Sai  Theja K.}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace*{-3em}
+\begin{proposition}
+    Locus of a point on a smaller circle (radius = $R$) rolling (without slipping) on the inner surface of a larger circle (radius = $2R$) is a straight line through the center of the larger circle.
+\end{proposition}
+
+\begin{figure}[h]
+    \centering
+    \def\svgwidth{0.75\linewidth}
+    \graphicspath{{../inkscape/tex_pdf/}} % can be skipped if figure is in the same folder
+    \input{../inkscape/tex_pdf/drawing.pdf_tex} % skip <path to file>/ if figure is in the same folder
+    \caption{Schematic of motion}
+    \label{fig:schematic}
+\end{figure}
+
+\begin{proof}
+    Let the point, center of smaller circle and the center of the larger circle (origin) (say $P$, $C$ and $O$ respectively) be represented in cylindrical co-ordinates by $(r_P, \theta_P)$, $(r_C, \theta_C)$ and $(r_O, \theta_O)$. The schematic is shown in Figure \ref{fig:schematic}. By definition, $(r_O, \theta_O) = (0, 0)$
+    \section{Locus of $P$}
+    Let's consider a point $P$ on the smaller circle whose radius makes an angle $\alpha$ with the x-axis. $P$ is represented as $(r_P, \theta_P)$ and let us derive the expression for $r_P$ during this rolling motion.\\
+    From $\triangle OCP$, $\overline{OP}(r_P)$ can be calculated using cosine law.
+    \begin{equation}
+        {\overline{OP}}^2 = {\overline{OC}}^2 + {\overline{CP}}^2 - 2 \; \overline{OC} \; \overline{CP} \; \cos(\angle OCP) \label{eqn:cosine_law}
+    \end{equation}
+    $\angle OCP$ can be calculated as the other two angles in $\triangle OCP$ are equal (isosceles triangle) to $\left( \theta_C-\theta_P \right)$.
+    \begin{gather*}
+        \overline{OC} = R = \overline{PC} \implies \angle CPO = \angle POC = \theta_C-\theta_P \\
+        \therefore \angle OCP = \pi - \angle CPO - \angle POC = \pi - 2 \left(\theta_C-\theta_P\right)
+        % r^2_P = 
+    \end{gather*}
+    $r_P$ can be calculated from Equation \ref{eqn:cosine_law} as follows :
+    \begin{align}
+        {r_P}^2 &= R^2 + R^2 - 2 \times R \times R \times \cos(\pi - 2 \left(\theta_C-\theta_P\right)) \nonumber \\
+                &= 2 R^2 \left\{ 1 + \cos\left(2 \left(\theta_C-\theta_P\right)\right) \right\} = 2 R^2 \left\{ 2 \cos^2\left(\theta_C-\theta_P\right) \right\} \nonumber \\
+        \implies &\boxed{r_P = 2R\cos\left(\theta_C-\theta_P\right)} \label{eqn:locus_r}
+    \end{align}
+    \subsection{Relation between $\omega_{CO}$ and $\omega_{PC}$}
+    Consider the point $T$ on the smaller circle in contact with the larger circle. The no-slip condition dictates that there will be no relative motion between the surfaces at the point of contact $T$.
+    \begin{equation}
+        \vec{V}_{TO} = 0 = \vec{V}_{TC} + \vec{V}_{CO} \tag{No-Slip Condition} \label{eqn:no-slip}
+    \end{equation}
+    This condition gives us a relation between the angular velocities $\vec{\omega}_{CO} \; (\dot{\theta}_C)$ and $\vec{\omega}_{TC} \; (\dot{\alpha})$ :
+    \begin{align}
+        \vec{\omega}_{CO} &= \vec{r}_{CO} \times  \vec{V}_{CO} \nonumber \\
+        \vec{\omega}_{TC} &= \vec{r}_{TC} \times  \vec{V}_{TC} = \vec{r}_{TC} \times -\vec{V}_{CO} = -\vec{\omega}_{CO} \nonumber \\
+        \vec{\omega}_{TC} &= \boxed{\dfrac{d \alpha}{d t} = -\dfrac{d \theta_C}{d t}} = -\vec{\omega}_{CO} \label{eqn:alpha_dot}
+    \end{align}
+    For deriving $\alpha$, consider the following in $\triangle CNP$,
+    \begin{itemize}
+        \item $\angle CPN = \angle CPO = \theta_C - \theta_P$
+        \item $\angle CNP$ and $\theta_P$ are supplementary angles $\implies \angle CNP = \pi - \theta_P$
+        \item Thus, we can find the third angle $\angle PCN \, (\alpha)$
+    \end{itemize}
+    \begin{equation}
+        \angle PCN = \boxed{\alpha = 2 \, \theta_P - \theta_C} = \pi - \angle CPN - \angle CNP \label{eqn:alpha}
+    \end{equation}
+    From Equations \ref{eqn:alpha_dot} and \ref{eqn:alpha} :
+    \begin{gather}
+        2\dfrac{d \theta_P}{d t} - \dfrac{d \theta_C}{d t} = \dfrac{d \alpha}{d t} = -\dfrac{d \theta_C}{d t} \implies \boxed{\dfrac{d \theta_P}{d t} = 0} \label{eqn:locus_theta}
+    \end{gather}
+    \section{Conclusion}
+    For the trajectory of $P$ i.e., time evolution of position of $P$, consider a general case where initially $\theta_C(t=0) = \theta^0_C$, $\theta_P(t=0) = \theta^0_P$ and $\dot{\theta}_C = \omega \text{ (constant)}$
+    \begin{gather}
+        \boxed{\theta_P = \theta^0_P} \label{eqn:final_locus_theta} \\
+        \theta_C = \theta^0_C + \omega \, t \nonumber \\
+        r_P = 2 R \cos \left( \theta_C-\theta_P \right) \nonumber \\
+        \implies \boxed{r_P = 2 R \cos \left( \theta^0_C + \omega \, t-\theta^0_P \right)} \label{eqn:final_locus_r}
+    \end{gather}
+    From Equation \ref{eqn:final_locus_theta}, we can see that the angle $P$ makes with the $x$-axis ($\theta_P$) remains constant and from Equation \ref{eqn:final_locus_r} that $r_P$ goes to zero periodically. Therefore, $P$ passes through origin $O$ while maintaining a constant slope $\left(\tan(\theta_P)\right)$ and thus it \emph{slides on a straight line through the origin} during the rolling motion as proposed originally.
+\end{proof}
+
+% \begin{itemize}
+    % \item alpha theta c theta p relation then theta c constant proof
+    % \item Finalise the locus
+    % \item Relocate the text anchors properly - Re-export PDF+Latex way
+    % \item Take care of (2R, R) vs (R, R/2)
+    % \item Add R on CT
+    % \item 1. omega relation, 2. locus of general point
+% \end{itemize}
+
+\end{document}
