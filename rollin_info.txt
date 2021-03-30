@@ -1,5 +1,5 @@
 Documenting proof of circ-in-circ
-Source : M. B. Raj Whatsapp Video
+Source : Raj WhatsApp Video
 Statement : Locus of a point on the surface of a circle rolling (without slipping) on the inner surface of a larger circle is a straight line through origin
 Steps :
 	1. Frame the video into statement

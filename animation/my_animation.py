@@ -3,7 +3,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 fname=''
-plt.style.use('dark_background'); fname='black_'
+# Dark Background Option
+if(False): plt.style.use('dark_background'); fname='black_'
 import matplotlib.animation as animation
 
 big_rad = 0.5 ; small_rad = big_rad/2
@@ -45,16 +46,19 @@ def init():
     return line,# small_circle,
 
 def animate(i):
-    ## Points P, Q animation
+    ## Points P, Q, R and S animation
     animate_point_plot(dot_P, th_P_0, i)
     animate_point_plot(dot_Q, th_Q_0, i)
     animate_point_plot(dot_R, th_R_0, i)
     animate_point_plot(dot_S, th_S_0, i)
+
     ## Small circle animation
+    # New position for small circle center
     x_val = small_rad*np.cos(th_C_0 + omega*i)
     y_val = small_rad*np.sin(th_C_0 + omega*i)
-    ## Changing small circle center
+    # Changing small circle center
     small_circle.center = (x_val, y_val)
+
     return dot_P, dot_Q, small_circle,
 
 ## Big Circle - Static in the background

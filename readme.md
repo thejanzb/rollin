@@ -8,7 +8,7 @@ Consider a circle (radius R) rolling without slipping on the inner surface of a 
 <i> Visualization : </i>
 --
 
-![GIF](./animation/black_circ.gif)
+![GIF](./animation/black_rollin.gif)
 
 <i> Solution : </i>
 --
@@ -20,4 +20,4 @@ Consider a circle (radius R) rolling without slipping on the inner surface of a 
 ~~~
 <i> Source : </i>
 --
-WhatsApp status video of a similar animation from M. B. Raj
+WhatsApp status video of a similar animation from Raj
