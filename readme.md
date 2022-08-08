@@ -18,6 +18,6 @@ Consider a circle (radius R) rolling without slipping on the inner surface of a 
 * The variation of the radial distance $r_{PO}$ is also derived
 * This solution is coded in a python script to achieve the above animation
 
-<i> Source : </i>
+<i> Proof : </i>
 --
-WhatsApp status video of a similar animation from Raj
+The complete proof is given [here](./docu/main.pdf).
