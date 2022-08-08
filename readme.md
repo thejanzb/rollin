@@ -14,7 +14,7 @@ Consider a circle (radius R) rolling without slipping on the inner surface of a 
 --
 
 * The locus of a general point $P$ on the smaller circle is considered in the cylindrical coordinates
-* It is shown that angle $\theta_{PO}$ it makes at the center $O$ of the larger circle remains constant due to the no-slip condition
+* It is shown that the angle $\theta_{PO}$ it makes at the center $O$ of the larger circle remains constant due to the no-slip condition
 * The variation of the radial distance $r_{PO}$ is also derived
 * This solution is coded in a python script to achieve the above animation
 
