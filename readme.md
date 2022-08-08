@@ -1,6 +1,6 @@
 <b><i> Rolling Around </b></i>
 ==
-<i> Problem Description : </i>
+<i> Problem Statement : </i>
 --
 
 Consider a circle (radius R) rolling without slipping on the inner surface of a larger circle (radius 2R). Each point on the smaller circle slides on a straight line through the center of the larger circle during the rolling motion.
@@ -10,7 +10,7 @@ Consider a circle (radius R) rolling without slipping on the inner surface of a 
 
 ![GIF](./animation/black_roll.gif)
 
-<i> Solution : </i>
+<i> Solution Steps : </i>
 --
 
 * The locus of a general point $P$ on the smaller circle is considered in the cylindrical coordinates
